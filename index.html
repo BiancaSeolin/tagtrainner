@@ -923,16 +923,18 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-198195176-1', 'auto');
-ga('send', 'pageview');
+ ga('create', 'UA-198195176-1', 'auto');
+ ga('send', 'pageview');
    
- <!-- eventos - saber se rolou na página até o final   -->
-    $(window).scroll(function() {
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-            ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
-            <!--console.log("Final");-->
-        }
+ //eventos - saber se rolou na página até o final 
+  $(window).scroll(function() {
+       if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+           ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
+            //console.log("Final");
+       }
    });
+   
+   // ficou pelo menos um minuto na página 
   </script>
 
 </head>
@@ -2549,12 +2551,16 @@ ga('send', 'pageview');
    
   
    
-   <!-- eventos - apertar o botãon de fazer orçamento    -->
+   // eventos - apertar o botão de fazer orçamento  
    
    $0.addEventListener('click', function(){
      ga('send','event','category', 'action', 'label');
-    <!--console.log('deu certo')-->
-})
+     //console.log('deu certo')
+   })
+   
+   // eventos - clicou no icone do linkedin
+   
+   
    
   </script>
 
