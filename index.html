@@ -935,6 +935,10 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
    });
    
    // ficou pelo menos um minuto na página 
+   window.addEventListener('load', setTimeout(function(){
+     //console.log('1 min')
+	    ga('send', 'event', 'PageView', '>= 1 min', 'https://biancaseolin.github.io/Html/');
+    	}, 60000));
   </script>
 
 </head>
