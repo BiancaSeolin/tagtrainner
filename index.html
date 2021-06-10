@@ -925,6 +925,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-198195176-1', 'auto');
 ga('send', 'pageview');
+   
+ <!-- eventos - saber se rolou na página até o final   -->
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
+            <!--console.log("Final");-->
+        }
+   });
   </script>
 
 </head>
@@ -2539,13 +2547,7 @@ ga('send', 'pageview');
       element.style.right = '20px';
     }, Math.random() * 12000 + 5000);
    
-    <!-- eventos - saber se rolou na página até o final   -->
-    $(window).scroll(function() {
-    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-        ga('send','event','category', 'action', 'label');
-        <!--console.log("Final");-->
-    }
-   });
+  
    
    <!-- eventos - apertar o botãon de fazer orçamento    -->
    
