@@ -2538,6 +2538,13 @@ ga('send', 'pageview');
       var element = document.getElementById('call-me-baby');
       element.style.right = '20px';
     }, Math.random() * 12000 + 5000);
+   
+    $(window).scroll(function() {
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+        ga('send','event','category', 'action', 'label')
+        console.log("Final");
+    }
+});
   </script>
 
 </body>
