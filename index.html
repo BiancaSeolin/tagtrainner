@@ -2539,12 +2539,21 @@ ga('send', 'pageview');
       element.style.right = '20px';
     }, Math.random() * 12000 + 5000);
    
+    <!-- eventos - saber se rolou na página até o final   -->
     $(window).scroll(function() {
     if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-        ga('send','event','category', 'action', 'label')
-        console.log("Final");
+        ga('send','event','category', 'action', 'label');
+        <!--console.log("Final");-->
     }
-});
+   });
+   
+   <!-- eventos - apertar o botãon de fazer orçamento    -->
+   
+   $0.addEventListener('click', function(){
+     ga('send','event','category', 'action', 'label');
+    <!--console.log('deu certo')-->
+})
+   
   </script>
 
 </body>
