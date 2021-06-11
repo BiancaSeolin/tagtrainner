@@ -927,10 +927,11 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
  ga('send', 'pageview');
    
  //eventos - saber se rolou na página até o final 
-  $(window).scroll(function() {
+ $(window).scroll(function() {
        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
            ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
-            //console.log("Final");
+            console.log("Final");
+            $(window).unbind("scroll");
        }
    });
    
@@ -2563,10 +2564,9 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
    })
    
    // eventos - clicou no portifolio over informatica 
-   var rover = document.querySelector('.portfolio-hover')
-   rover.addEventListener('click', function(){
+   document.querySelector('.portfolio-hover').addEventListener('click', function(){
      ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
-     console.log('deu certo')
+     //console.log('deu certo')
    })
    
    
