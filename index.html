@@ -927,18 +927,20 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
  ga('send', 'pageview');
    
  //eventos - saber se rolou na página até o final 
- $(window).scroll(function() {
-       if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-           ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
-            console.log("Final");
-            $(window).unbind("scroll");
-       }
-   });
+ var func = function() {
+ if (window.pageXOffset + window.pageYOffset == document.body.scrollHeight) {
+	 
+ 	ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
+ 	console.log("Final");
+    	window.removeEventListener("scroll", func);
+  }
+}
+window.addEventListener("scroll", func);
    
    // ficou pelo menos um minuto na página 
-   window.addEventListener('load', setTimeout(function(){
-     //console.log('1 min')
-	    ga('send', 'event', 'PageView', '>= 1 min', 'https://biancaseolin.github.io/Html/');
+window.addEventListener('load', setTimeout(function(){
+	
+	ga('send', 'event', 'PageView', '>= 1 min', 'https://biancaseolin.github.io/Html/');
     	}, 60000));
   </script>
 
