@@ -2580,18 +2580,21 @@ window.addEventListener('load',()=>setTimeout(function(){
    
    // eventos - apertar o botão de fazer orçamento  
    
-   $0.addEventListener('click', function(){
-     ga('send','event','btn orçamento', 'https://biancaseolin.github.io/Html/');
-     //console.log('deu certo')
-   })
+   document.querySelector('.page-scroll.btn.btn-xl').addEventListener('click', function(){
+    	console.log('deu certo')
+    	ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
+    
+	})
 	  
-   // eventos - apertou o botão enviar mensagem
-	  
-	  
+   // eventos - apertou o botão enviar mensagem - é um forms deveria usar forms ou submit ?
+  document.querySelector('button.btn.btn-xl').addEventListener('click', function(){
+    	//console.log('deu certo')
+    	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem')   
+  })
+ 
    
-   
 	  
- // eventos - clicou em algum portifolio 
+ // eventos - clicou em algum portifolio - fazer um evento só para os 3 tipos de portifólio 
    document.querySelector('.portfolio-hover').addEventListener('click', function(){
      ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
      //console.log('deu certo')
