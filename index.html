@@ -935,11 +935,32 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   }
 }
 
-window.addEventListener("scroll", func);
+window.addEventListener("scroll", func)
+	  
+var func2 = function(evt) {
+  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.75) { //Dispara ao atingir os  75% de scroll
+    ga('send','event','interacaoTela', 'roloupage','tela75');
+    //console.log("Final");
+    window.removeEventListener("scroll", func2);
+  }
+}
+
+window.addEventListener("scroll", func2)
+	  
+var func3 = function(evt) {
+  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.50) { //Dispara ao atingir os  50% de scroll
+    ga('send','event','interacaoTela', 'roloupage','tela50');
+    //console.log("Final");
+    window.removeEventListener("scroll", func3);
+  }
+}
+
+window.addEventListener("scroll", func3)
+	  
    
-   // ficou pelo menos um minuto na página 
+// ficou pelo menos um minuto na página 
 window.addEventListener('load',()=>setTimeout(function(){
-	ga('send', 'event', '1min', '>= 1 min', 'https://biancaseolin.github.io/Html/');
+	ga('send', 'event', 'tempotela', '>= 1 min', 'ficouNoSite');
     	}, 60000));
   </script>
 
@@ -2563,8 +2584,14 @@ window.addEventListener('load',()=>setTimeout(function(){
      ga('send','event','btn orçamento', 'https://biancaseolin.github.io/Html/');
      //console.log('deu certo')
    })
+	  
+   // eventos - apertou o botão enviar mensagem
+	  
+	  
    
-   // eventos - clicou no portifolio over informatica 
+   
+	  
+ // eventos - clicou em algum portifolio 
    document.querySelector('.portfolio-hover').addEventListener('click', function(){
      ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
      //console.log('deu certo')
