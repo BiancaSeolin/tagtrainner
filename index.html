@@ -927,14 +927,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
  ga('send', 'pageview');
    
  //eventos - saber se rolou na página até o final 
- var func = function() {
- if (window.pageXOffset + window.pageYOffset == document.body.scrollHeight) {
-	 
- 	ga('send','event','roloupage', 'https://biancaseolin.github.io/Html/');
- 	console.log("Final");
-    	window.removeEventListener("scroll", func);
+ var func = function(evt) {
+  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.95) { //Dispara ao atingir os  95% de scroll
+    ga('send','event','interacaoTela', 'roloupage','tela95');
+    //console.log("Final");
+    window.removeEventListener("scroll", func);
   }
 }
+
 window.addEventListener("scroll", func);
    
    // ficou pelo menos um minuto na página 
