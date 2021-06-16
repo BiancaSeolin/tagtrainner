@@ -2596,7 +2596,8 @@ window.addEventListener('load',()=>setTimeout(function(){
     //console.log('uhll')
     ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
   })
-	  
+	
+// mouseoverserviços	  
  document.querySelector("#services").addEventListener('mouseover', (evt) => {
   	if(evt.target.matches("section,  section *")) {
     		var elementPass= evt.target.parentElement.parentElement.querySelector("i");
@@ -2607,7 +2608,7 @@ window.addEventListener('load',()=>setTimeout(function(){
 })
 	  
 
-   
+  // evento do portifólio  
   document.querySelector("#portfolio").addEventListener('click', (evt) => {
   	if(evt.target.matches("a, a *")) {
     	 	var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
