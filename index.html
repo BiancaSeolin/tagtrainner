@@ -2598,12 +2598,14 @@ window.addEventListener('load',()=>setTimeout(function(){
   })
 
    
+  document.querySelector("#portfolio").addEventListener('click', (evt) => {
+  	if(evt.target.matches("a, a *")) {
+    	 	var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
+    		var name = elementClicked.textContent;
+		ga('send', 'event', 'interacaoTela', "Portfolio " + name);
+	}
+  })
 	  
- // eventos - clicou em algum portifolio - fazer um evento só para os 3 tipos de portifólio 
- document.querySelector('.portfolio-hover').addEventListener('click', function(){
-	ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
-     	//console.log('deu certo')
-   }) 
    
   </script>
 
