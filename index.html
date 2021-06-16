@@ -2585,9 +2585,9 @@ window.addEventListener('load',()=>setTimeout(function(){
     
    })	  
    // eventos - apertou o botão enviar mensagem - é um forms deveria usar forms ou submit ?
-  document.querySelector('form').addEventListener('submit', function(){
-	 // falta verificar preenchimentos dos input 
-	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem') 
+ document.querySelector('#contactForm').addEventListener('submit', function(){
+    	//console.log('oi')
+	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagemteste') 
   })
   
 	  
