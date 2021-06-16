@@ -2585,11 +2585,14 @@ window.addEventListener('load',()=>setTimeout(function(){
     
    })	  
    // eventos - apertou o botão enviar mensagem - é um forms deveria usar forms ou submit ?
- document.querySelector('#contactForm').addEventListener('submit', function(){
-    	//console.log('oi')
-	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagemteste') 
-  })
-  
+ window.addEventListener("submit", function(evt) {
+  	var flag; //Flag que caso true, dispara a tag
+  /*mágica fica aqui*/
+  	flag = evt.target.querySelectorAll("[role=alert]").length === 0;
+  if(flag) {
+    //console.log("dispara");
+  }
+})
 	  
   // mouseover no e-commerce	  
   document.querySelector('.fa.fa-shopping-cart.fa-stack-1x.fa-inverse').addEventListener('mouseover',function(){
