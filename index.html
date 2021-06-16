@@ -2596,6 +2596,16 @@ window.addEventListener('load',()=>setTimeout(function(){
     //console.log('uhll')
     ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
   })
+	  
+ document.querySelector("#services").addEventListener('mouseover', (evt) => {
+  	if(evt.target.matches("section,  section *")) {
+    		var elementPass= evt.target.parentElement.parentElement.querySelector("i");
+    		var name = elementPass.textContent;
+		ga('send', 'event', 'interacaoTela', "Serviços " + name);
+            	//console.log('deu certo')
+	}
+})
+	  
 
    
   document.querySelector("#portfolio").addEventListener('click', (evt) => {
