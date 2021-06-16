@@ -2583,24 +2583,25 @@ window.addEventListener('load',()=>setTimeout(function(){
     	console.log('deu certo')
     	ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
     
-	})	  
+   })	  
    // eventos - apertou o botão enviar mensagem - é um forms deveria usar forms ou submit ?
-  document.querySelector('button.btn.btn-xl').addEventListener('click', function(){
-    	//console.log('deu certo')
-    	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem')   
+  document.querySelector('form').addEventListener('submit', function(){
+	 // falta verificar preenchimentos dos input 
+	ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem') 
   })
+  
 	  
   // mouseover no e-commerce	  
   document.querySelector('.fa.fa-shopping-cart.fa-stack-1x.fa-inverse').addEventListener('mouseover',function(){
     //console.log('uhll')
     ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
- })
+  })
 
    
 	  
  // eventos - clicou em algum portifolio - fazer um evento só para os 3 tipos de portifólio 
  document.querySelector('.portfolio-hover').addEventListener('click', function(){
-	 ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
+	ga('send','event','rover informatica', 'https://biancaseolin.github.io/Html/');
      	//console.log('deu certo')
    }) 
    
