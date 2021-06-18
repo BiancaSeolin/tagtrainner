@@ -918,52 +918,60 @@
     <![endif]-->
 
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+// Eventos - head
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
- ga('create', 'UA-198195176-1', 'auto');
- ga('send', 'pageview');
-   
- //eventos - saber se rolou na página até o final 
- var func = function(evt) {
-  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.95) { //Dispara ao atingir os  95% de scroll
-    ga('send','event','interacaoTela', 'roloupage','tela95');
-    //console.log("Final");
-    window.removeEventListener("scroll", func);
-  }
+ga('create', 'UA-198195176-1', 'auto');
+ga('send', 'pageview');
+
+//Evento, scroll, roloupage
+var func = function(evt) {
+    if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.95) { //Dispara ao atingir os  95% de scroll
+        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela95');
+        //console.log("Final");
+        window.removeEventListener("scroll", func);
+    }
 }
 
 window.addEventListener("scroll", func)
-	  
+
 var func2 = function(evt) {
-  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.75) { //Dispara ao atingir os  75% de scroll
-    ga('send','event','interacaoTela', 'roloupage','tela75');
-    //console.log("Final");
-    window.removeEventListener("scroll", func2);
-  }
+    if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.75) { //Dispara ao atingir os  75% de scroll
+        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela75');
+        //console.log("Final");
+        window.removeEventListener("scroll", func2);
+    }
 }
 
 window.addEventListener("scroll", func2)
-	  
+
 var func3 = function(evt) {
-  if ((window.pageYOffset + window.innerHeight)/document.body.scrollHeight >= 0.50) { //Dispara ao atingir os  50% de scroll
-    ga('send','event','interacaoTela', 'roloupage','tela50');
-    //console.log("Final");
-    window.removeEventListener("scroll", func3);
-  }
+    if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.50) { //Dispara ao atingir os  50% de scroll
+        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela50');
+        //console.log("Final");
+        window.removeEventListener("scroll", func3);
+    }
 }
 
 window.addEventListener("scroll", func3)
-	  
-   
-// ficou pelo menos um minuto na página 
-window.addEventListener('load',()=>setTimeout(function(){
-	ga('send', 'event', 'tempotela', '>= 1 min', 'ficouNoSite');
-    	}, 60000));
-  </script>
 
+
+// Evento, load, tempo passado no site  
+window.addEventListener('load', () => setTimeout(function() {
+    ga('send', 'event', 'tempotela', '>= 1 min', 'ficouNoSite');
+}, 60000)); <
+/script>
+	  
 </head>
 
 <body id="page-top" class="index">
@@ -2576,49 +2584,40 @@ window.addEventListener('load',()=>setTimeout(function(){
       element.style.right = '20px';
     }, Math.random() * 12000 + 5000);
    
-  
-   
-   // eventos - apertar o botão de fazer orçamento   
-   document.querySelector('.page-scroll.btn.btn-xl').addEventListener('click', function(){
-    	console.log('deu certo')
-    	ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
-    
-   })	  
-   // eventos - apertou o botão enviar mensagem - é um forms deveria usar forms ou submit ?
- window.addEventListener("submit", function(evt) {
-  	var flag; //Flag que caso true, dispara a tag
-  /*mágica fica aqui*/
-  	flag = evt.target.querySelectorAll("[role=alert]").length === 0;
-  if(flag) {
-    //console.log("dispara");
-  }
+   // DISPAROS DE EVENTOS -----------------------------------------------------------------
+
+
+// Evento, click, botão fazer orçamento.   
+document.querySelector('.page-scroll.btn.btn-xl').addEventListener('click', function() {
+    console.log('deu certo')
+    ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
+
 })
-	  
-  // mouseover no e-commerce	  
-  document.querySelector('.fa.fa-shopping-cart.fa-stack-1x.fa-inverse').addEventListener('mouseover',function(){
+// evento, submit , enviou o formulário 
+window.addEventListener("submit", function(evt) {
+    var flag; //Flag que caso true, dispara a tag
+    /*mágica fica aqui*/
+    flag = evt.target.querySelectorAll("[role=alert]").length === 0;
+    if (flag) {
+        ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem')
+        //console.log("dispara");
+    }
+})
+
+// Evento, mouseover, e-commerce.  
+document.querySelector('.fa.fa-shopping-cart.fa-stack-1x.fa-inverse').addEventListener('mouseover', function() {
     //console.log('uhll')
     ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
-  })
-	
-// mouseoverserviços	  
- document.querySelector("#services").addEventListener('mouseover', (evt) => {
-  	if(evt.target.matches("section,  section *")) {
-    		var elementPass= evt.target.parentElement.parentElement.querySelector("i");
-    		var name = elementPass.textContent;
-		ga('send', 'event', 'interacaoTela', "Serviços " + name);
-            	//console.log('deu certo')
-	}
 })
-	  
 
-  // evento do portifólio  
-  document.querySelector("#portfolio").addEventListener('click', (evt) => {
-  	if(evt.target.matches("a, a *")) {
-    	 	var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
-    		var name = elementClicked.textContent;
-		ga('send', 'event', 'interacaoTela', "Portfolio " + name);
-	}
-  })
+// Evento, click, portifólios  
+document.querySelector("#portfolio").addEventListener('click', (evt) => {
+    if (evt.target.matches("a, a *")) {
+        var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
+        var name = elementClicked.textContent;
+        ga('send', 'event', 'interacaoTela', "Portfolio " + name);
+    }
+})
 	  
    
   </script>
