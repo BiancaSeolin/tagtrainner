@@ -931,13 +931,13 @@
     m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-ga('create', 'UA-198195176-1', 'auto');
-ga('send', 'pageview');
+//ga('create', 'UA-198195176-1', 'auto');
+//ga('send', 'pageview');
 
 //Evento, scroll, roloupage
 var func = function(evt) {
     if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.95) { //Dispara ao atingir os  95% de scroll
-        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela95');
+        //ga('send', 'event', 'interacaoTela', 'roloupage', 'tela95');
         //console.log("Final");
         window.removeEventListener("scroll", func);
     }
@@ -947,7 +947,7 @@ window.addEventListener("scroll", func)
 
 var func2 = function(evt) {
     if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.75) { //Dispara ao atingir os  75% de scroll
-        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela75');
+        //ga('send', 'event', 'interacaoTela', 'roloupage', 'tela75');
         //console.log("Final");
         window.removeEventListener("scroll", func2);
     }
@@ -957,7 +957,7 @@ window.addEventListener("scroll", func2)
 
 var func3 = function(evt) {
     if ((window.pageYOffset + window.innerHeight) / document.body.scrollHeight >= 0.50) { //Dispara ao atingir os  50% de scroll
-        ga('send', 'event', 'interacaoTela', 'roloupage', 'tela50');
+        //ga('send', 'event', 'interacaoTela', 'roloupage', 'tela50');
         //console.log("Final");
         window.removeEventListener("scroll", func3);
     }
@@ -968,7 +968,7 @@ window.addEventListener("scroll", func3)
 
 // Evento, load, tempo passado no site  
 window.addEventListener('load', () => setTimeout(function() {
-    ga('send', 'event', 'tempotela', '>= 1 min', 'ficouNoSite');
+    //ga('send', 'event', 'tempotela', '>= 1 min', 'ficouNoSite');
 }, 60000)); <
 /script> - Hardcode - GA 
 
@@ -2617,7 +2617,7 @@ style = "display:none;visibility:hidden" > < /iframe></noscript >
 // Evento, click, botão fazer orçamento.   
 document.querySelector('.page-scroll.btn.btn-xl').addEventListener('click', function() {
     console.log('deu certo')
-    ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
+    //ga('send', 'event', 'interacaoTela', 'btnFazerOrcamento')
 
 })
 // evento, submit , enviou o formulário 
@@ -2626,7 +2626,7 @@ window.addEventListener("submit", function(evt) {
     /*mágica fica aqui*/
     flag = evt.target.querySelectorAll("[role=alert]").length === 0;
     if (flag) {
-        ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem')
+        //ga('send', 'event', 'interacaoTela', 'btnEnviarMensagem')
         //console.log("dispara");
     }
 })
@@ -2634,7 +2634,7 @@ window.addEventListener("submit", function(evt) {
 // Evento, mouseover, e-commerce.  
 document.querySelector('.fa.fa-shopping-cart.fa-stack-1x.fa-inverse').addEventListener('mouseover', function() {
     //console.log('uhll')
-    ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
+    //ga('send', 'event', 'interacaoTela', 'viuServicoEcommerce')
 })
 
 // Evento, click, portifólios  
@@ -2642,7 +2642,7 @@ document.querySelector("#portfolio").addEventListener('click', (evt) => {
     if (evt.target.matches("a, a *")) {
         var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
         var name = elementClicked.textContent;
-        ga('send', 'event', 'interacaoTela', "Portfolio " + name);
+        //ga('send', 'event', 'interacaoTela', "Portfolio " + name);
     }
 })
 	  
