@@ -931,7 +931,7 @@
     m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-//ga('create', 'UA-198195176-1', 'auto');
+ga('create', 'UA-198195176-1', 'auto');
 //ga('send', 'pageview');
 
 //Evento, scroll, roloupage
@@ -2643,6 +2643,12 @@ document.querySelector("#portfolio").addEventListener('click', (evt) => {
         //ga('send', 'event', 'interacaoTela', "Portfolio " + name);
     }
 })
+if(window.onload=='true'){
+	
+    console.log('oi')
+    ga('send', 'event', 'saiu','fechouTela');
+    }
+}
 	  
    
   </script>
